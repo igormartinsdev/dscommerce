@@ -1,8 +1,12 @@
 package com.devsuperior.dscommerce.entities;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 import java.util.Objects;
 
+@Entity
+@Table(name = "tb_user")
 public class User {
 
     private Long id;
@@ -24,6 +28,8 @@ public class User {
         this.password = password;
     }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long getId() {
         return id;
     }
